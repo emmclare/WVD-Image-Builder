@@ -13,10 +13,10 @@ jobs:
     - name: AZURE LOGIN 
       uses: azure/login@v1
       with:
-        creds: ${{secrets.AZURE_CREDENTIALS}}
+        creds: ${{secrets.AZURE_SP}}
 
-    - name: BUILD WEBAPP
-      run: sudo ${{ GITHUB.WORKSPACE }}/webApp/buildscript.sh # Runs necessary build scripts and copies built artifacts to  ${{ GITHUB.WORKSPACE }}/workflow_artifacts
+   # - name: BUILD WEBAPP
+    #  run: sudo ${{ GITHUB.WORKSPACE }}/webApp/buildscript.sh # Runs necessary build scripts and copies built artifacts to  ${{ GITHUB.WORKSPACE }}/workflow_artifacts
       
     - name: Build Azure Virtual Machine Image
       uses: Azure/build-vm-image@v0
@@ -26,5 +26,5 @@ jobs:
        location: 'eastus'
        source-os-type: 'windows'        
        source-image: MicrosoftWindowsDesktop:Windows-10:20h1-evd        
-       customizer-script: |
-          & 'c:\workflow-artifacts\webApp\webconfig.ps1'
+   #    customizer-script: |
+   #       & 'c:\workflow-artifacts\webApp\webconfig.ps1'
