@@ -25,7 +25,7 @@ jobs:
        managed-identity: 'AIBIdentity'
        location: 'eastus'
        source-os-type: 'windows'
-       source-image-type: 'platformImage'     
-       source-image: MicrosoftWindowsDesktop:Windows-10:20h1-evd        
+       source-image-type: 'platformImage'   
+       source-image: MicrosoftWindowsDesktop:Windows-10:20h1-evd:latest        
    #    customizer-script: |
    #       & 'c:\workflow-artifacts\webApp\webconfig.ps1'
