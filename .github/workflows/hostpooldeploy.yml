@@ -29,12 +29,7 @@ jobs:
           creds: ${{secrets.AZURE_SP}}   
 
 # Runs a single command using the runners shell
-      - name: Deploy Azure Resource Manager (ARM) Template
-        env: 
-          subscription_id: ${{secrets.SUBSCRIPTION_ID}}
-          domain: ${{secrets.DOMAIN}}
-          admin_upn: ${{secrets.ADMIN_UPN}}
-          admin_pw: ${{secrets.ADMIN_PW}}        
+      - name: Deploy Azure Resource Manager (ARM) Template         
         uses: Azure/arm-deploy@v1.0.1
         with:
         # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
@@ -43,13 +38,16 @@ jobs:
           subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}    
           region: EastUS
     # Provide the name of a resource group, only required for resource Group deployments.
-          resourceGroupName: RG-AIB-GitHub
+          #resourceGroupName: RG-AIB-GitHub
     # Specify the path or URL to the Azure Resource Manager template.
           template: templates/mainTemplate.json
     # Incremental (only add resources to resource group) or Complete (remove extra resources from resource group) or Validate (only validates the template).
           deploymentMode: incremental
     # Specifies the name of the resource group deployment to create.
           deploymentName: github-aib-hostpool
+          domain: ${{secrets.DOMAIN}}
+          admin_upn: ${{secrets.ADMIN_UPN}}
+          admin_pw: ${{secrets.ADMIN_PW}}  
     # Supply deployment parameter values.
           parameters: templates/params.json
 
