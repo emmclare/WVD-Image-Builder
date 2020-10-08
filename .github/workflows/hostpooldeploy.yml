@@ -30,6 +30,11 @@ jobs:
 
 # Runs a single command using the runners shell
       - name: Deploy Azure Resource Manager (ARM) Template
+        env: 
+          subscription_id: ${{secrets.SUBSCRIPTION_ID}}
+          domain: ${{secrets.DOMAIN}}
+          admin_upn: ${{secrets.ADMIN_UPN}}
+          admin_pw: ${{secrets.ADMIN_PW}}        
         uses: Azure/arm-deploy@v1.0.1
         with:
         # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
