@@ -1,6 +1,12 @@
 name: create_custom_wvd_image
 
-on: push
+on:  
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   BUILD-CUSTOM-IMAGE:
