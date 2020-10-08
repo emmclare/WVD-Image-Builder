@@ -9,7 +9,7 @@
             "value": "https://raw.githubusercontent.com/Azure/RDS-Templates/master/ARM-wvd-templates/DSC/Configuration.zip"
         },
         "subscription": {
-            "value": {{ secrets.SUBSCRIPTION_ID}}
+            "value": "[parameters('subscription_id')]"
         },
         "resourceGroup": {
             "value": "RG-AIB-GitHub"
@@ -42,10 +42,10 @@
             "value": true
         },
         "administratorAccountUsername": {
-            "value": {{ secrets.admin_upn}}
+            "value": "[parameters('admin_upn')]"
         },
         "administratorAccountPassword": {
-            "value": {{ secrets.admin_pw}}
+            "value": "[parameters('admin_pw')]"
         },
         "createAvailabilitySet": {
             "value": true
@@ -81,7 +81,7 @@
             "value": ""
         },
         "vmCustomImageSourceId": {
-            "value": \"/subscriptions/\"{{ secrets.subscription_id}}\"/resourceGroups/RG-GitHub-AIB/providers/Microsoft.Compute/galleries/GitHubSharedImages/images/GitHubAIB\"
+            "value": \"/subscriptions/\"[parameters('subscription_id')]"\"/resourceGroups/RG-GitHub-AIB/providers/Microsoft.Compute/galleries/GitHubSharedImages/images/GitHubAIB\"
         },
         "vmDiskType": {
             "value": "Standard_LRS"
@@ -135,7 +135,7 @@
             "value": ""
         },
         "vmTemplate": {
-            "value": "{\"domain\":\${{ secrets.domain}},\"galleryImageOffer\":null,\"galleryImagePublisher\":null,\"galleryImageSKU\":null,\"imageType\":\"CustomImage\",\"imageUri\":null,\"customImageId\": \"/subscriptions/\"{{ secrets.subscription_id}}\"/resourceGroups/RG-GitHub-AIB/providers/Microsoft.Compute/galleries/GitHubSharedImages/images/GitHubAIB\",\"namePrefix\":\"VM-AIB\",\"osDiskType\":\"StandardSSD_LRS\",\"useManagedDisks\":true,\"vmSize\":{\"id\":\"Standard_D2s_v3\",\"cores\":2,\"ram\":8},\"galleryItemId\":null}"
+            "value": "{\"domain\":[parameters('domain')]",\"galleryImageOffer\":null,\"galleryImagePublisher\":null,\"galleryImageSKU\":null,\"imageType\":\"CustomImage\",\"imageUri\":null,\"customImageId\": \"/subscriptions/\"[parameters('subscription_id')]"\"/resourceGroups/RG-GitHub-AIB/providers/Microsoft.Compute/galleries/GitHubSharedImages/images/GitHubAIB\",\"namePrefix\":\"VM-AIB\",\"osDiskType\":\"StandardSSD_LRS\",\"useManagedDisks\":true,\"vmSize\":{\"id\":\"Standard_D2s_v3\",\"cores\":2,\"ram\":8},\"galleryItemId\":null}"
         },
         "tokenExpirationTime": {
             "value": "2020-10-20T15:16:14.995Z"
@@ -180,7 +180,7 @@
             "value": ""
         },
         "domain": {
-            "value": ${{ secrets.domain}}
+            "value":"[parameters('domain')]"
         }
     }
 }
