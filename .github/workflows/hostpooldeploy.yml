@@ -34,7 +34,7 @@ jobs:
         uses: Azure/arm-deploy@v1.0.1
         with:
         # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
-          scope: subscription
+          scope: resourcegroup
     # Provide the Id of the subscription which should be used, only required for resource Group or Subscription deployments.
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}    
           region: EastUS
