@@ -39,7 +39,7 @@ jobs:
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}    
           region: EastUS
     # Provide the name of a resource group, only required for resource Group deployments.
-          #resourceGroupName: RG-AIB-GitHub
+          resourceGroupName: RG-AIB-GitHub
     # Specify the path or URL to the Azure Resource Manager template.
           template: templates/mainTemplate.json
     # Incremental (only add resources to resource group) or Complete (remove extra resources from resource group) or Validate (only validates the template).
