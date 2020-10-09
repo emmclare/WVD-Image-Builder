@@ -81,7 +81,7 @@
             "value": ""
         },
         "vmCustomImageSourceId": {
-            "value": "/subscriptions/[parameters('subscriptioN')]/resourceGroups/RG-GitHub-AIB/providers/Microsoft.Compute/galleries/GitHubSharedImages/images/GitHubAIB"
+            "value": "/subscriptions/[parameters('subscription')]/resourceGroups/RG-GitHub-AIB/providers/Microsoft.Compute/galleries/GitHubSharedImages/images/GitHubAIB"
         },
         "vmDiskType": {
             "value": "Standard_LRS"
