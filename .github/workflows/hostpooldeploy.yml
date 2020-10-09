@@ -28,6 +28,16 @@ jobs:
         with:
           creds: ${{secrets.AZURE_SP}}   
 
+      - name: variable substitution in json, xml, and yml files
+        uses: microsoft/variable-substitution@v1 
+        with:
+          files: 'templates/params.json'
+          env:
+            subscription: ${{secrets.SUBSCRIPTION_ID}}
+            domain: ${{secrets.DOMAIN}}
+            administratorAccountUsername: ${{secrets.ADMIN_UPN}}
+            administratorAccountPassword: ${{secrets.ADMIN_PW}}  
+
 # Runs a single command using the runners shell
       - name: Deploy Azure Resource Manager (ARM) Template         
         uses: Azure/arm-deploy@v1.0.1
@@ -35,7 +45,7 @@ jobs:
         # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
           scope: subscription
     # Provide the Id of the subscription which should be used, only required for resource Group or Subscription deployments.
-          subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}    
+          subscriptionId: ${{secrets.SUBSCRIPTION_ID}}    
           region: EastUS
     # Provide the name of a resource group, only required for resource Group deployments.
           #resourceGroupName: RG-AIB-GitHub
@@ -45,10 +55,7 @@ jobs:
           deploymentMode: incremental
     # Specifies the name of the resource group deployment to create.
           deploymentName: github-aib-hostpool
-          domain: ${{secrets.DOMAIN}}
-          admin_upn: ${{secrets.ADMIN_UPN}}
-          admin_pw: ${{secrets.ADMIN_PW}}  
-    # Supply deployment parameter values.
+    # Supplydeployment parameter values.
           parameters: templates/params.json
 
 
