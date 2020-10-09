@@ -51,7 +51,7 @@
             "value": true
         },
         "vmResourceGroup": {
-            "value": "RG-Github-AIB"
+            "value": "RG-Github-AIB-Hosts"
         },
         "vmLocation": {
             "value": "EastUS"
