@@ -33,10 +33,10 @@ jobs:
         with:
           files: 'templates/params.json'
           env:
-            subscription: ${{secrets.SUBSCRIPTION_ID}}
-            domain: ${{secrets.DOMAIN}}
-            administratorAccountUsername: ${{secrets.ADMIN_UPN}}
-            administratorAccountPassword: ${{secrets.ADMIN_PW}}  
+            parameters.subscription: ${{secrets.SUBSCRIPTION_ID}}
+            parameters.domain: ${{secrets.DOMAIN}}
+            parameters.administratorAccountUsername: ${{secrets.ADMIN_UPN}}
+            parameters.administratorAccountPassword: ${{secrets.ADMIN_PW}}  
 
 # Runs a single command using the runners shell
       - name: Deploy Azure Resource Manager (ARM) Template         
