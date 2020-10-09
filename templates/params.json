@@ -12,7 +12,7 @@
             "value": ""
         },
         "resourceGroup": {
-            "value": "RG-AIB-GitHub"
+            "value": "RG-Github-AIB"
         },
         "hostpoolName": {
             "value": "HP-AIB-GitHub"
@@ -33,7 +33,7 @@
             "value": "EastUS"
         },
         "workspaceResourceGroup": {
-            "value": "RG-AIB-GitHub"
+            "value": "RG-Github-AIB"
         },
         "allApplicationGroupReferences": {
             "value": ""
@@ -51,7 +51,7 @@
             "value": true
         },
         "vmResourceGroup": {
-            "value": "RG-AIB-GitHub-Hosts"
+            "value": "RG-Github-AIB-Hosts"
         },
         "vmLocation": {
             "value": "EastUS"
