@@ -51,7 +51,7 @@
             "value": true
         },
         "vmResourceGroup": {
-            "value": "RG-Github-AIB-Hosts"
+            "value": "RG-Github-AIB"
         },
         "vmLocation": {
             "value": "EastUS"
@@ -81,7 +81,7 @@
             "value": ""
         },
         "vmCustomImageSourceId": {
-            "value": "[concat('/subscriptions/', paramaters('subscription'), '/resourcegroups/', parameters('resourcegroup'), '/providers/Microsoft.Compute/galleries/GitHubSharedImages/images/GitHubAIB')]"
+            "value": "/providers/Microsoft.Compute/galleries/GitHubSharedImages/images/GitHubAIB"
         },
         "vmDiskType": {
             "value": "Standard_LRS"
@@ -183,4 +183,5 @@
             "value":""
         }
     }
+
 }
