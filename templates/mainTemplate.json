@@ -642,7 +642,7 @@
             "value": "[variables('vhds')]"
           },
           "rdshImageSourceId": {
-            "value": "[parameters('vmCustomImageSourceId')]"
+            "value": "[concat('/subscriptions/', parameters('subscription'), '/resourcegroups/', parameters('resourceGroup'), parameters('vmCustomImageSourceId'))]"
           },
           "location": {
             "value": "[parameters('vmLocation')]"
